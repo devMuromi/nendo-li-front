@@ -1,3 +1,7 @@
+<script>
+	let header = 'Nendoroid';
+</script>
+
 <div class="root">
 	<nav class="nav">
 		<a class="nav__item" href="/">Home</a>
@@ -6,7 +10,7 @@
 		<a class="nav__item" href="/my">My Page</a>
 		<a class="nav__item" href="/settings">Settings</a>
 	</nav>
-	<div class="header">Nendoroids</div>
+	<div class="header">{header}</div>
 	<div class="main">
 		<slot />
 	</div>
@@ -30,6 +34,7 @@
 		flex-direction: column;
 		width: 80px;
 		height: 100%;
+		margin-top: 60px;
 
 		background-color: whitesmoke;
 	}
@@ -54,7 +59,6 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		margin-left: 80px;
 		height: 60px;
 		line-height: 60px;
 		padding-left: 10px;

@@ -8,9 +8,9 @@
 </script>
 
 <div class="nendo-block">
-	<!-- <img src={data.image_link} height="128px" /> -->
-	<div>Nendo: {data.name_ko}</div>
-	<a href="/nendoroids/{data.id}">링크</a>
+	<img src={data.image_link} height="64px" />
+	<div>{data.number}</div>
+	<a href="/nendoroids/{data.number}">링크</a>
 </div>
 
 <style>
