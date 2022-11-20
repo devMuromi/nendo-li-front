@@ -5,10 +5,11 @@
 <div class="root">
 	<nav class="nav">
 		<a class="nav__item" href="/">Home</a>
-		<a class="nav__item" href="/nendoroids">Nendoroids</a>
-		<a class="nav__item" href="/nendoroids">testestsetsetstNs</a>
-		<a class="nav__item" href="/my">My Page</a>
-		<a class="nav__item" href="/settings">Settings</a>
+		<a class="nav__item" href="/nendoroids">넨도로이드</a>
+		<a class="nav__item" href="/series">시리즈</a>
+		<a class="nav__item" href="/news">뉴스</a>
+		<a class="nav__item" href="/my">마이페이지</a>
+		<a class="nav__item" href="/settings">설정</a>
 	</nav>
 	<div class="header">{header}</div>
 	<div class="main">

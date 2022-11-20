@@ -69,7 +69,7 @@
 	// }
 </script>
 
-<h1>Nendoroids {currentNumbering}</h1>
+<h1>Nendoroids {currentNumbering} - {currentNumbering.slice(0, -2) + '99'}</h1>
 <div class="numbering">
 	{#each numberings as numbering}
 		<button on:click={changeNumbering} name={numbering} class="numbering__item"
@@ -88,10 +88,10 @@
 
 <style>
 	.nendoroids-container {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, 128px);
+		/* display: grid; */
+		/* grid-template-columns: repeat(auto-fill, 100px); */
 		/* grid-auto-columns: 116px; */
-		gap: 12px;
+		/* gap: 1px; */
 	}
 	.numbering {
 		display: flex;

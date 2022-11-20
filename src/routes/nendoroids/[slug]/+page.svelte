@@ -27,12 +27,25 @@
 {#await promise}
 	<p>...waiting</p>
 {:then data}
-	<div>
-		nendo number : {data.number}
-		nendo name : {data.name_ko}
-		<img src={data.image_link} alt="nendo" height="128px" />
-		nendo gender : {data.gender}
+	<div class="nendoroid-info">
+		<div class="nendoroid-info__name">{data.number} {data.name_ko}</div>
+		<div class="nendoroid-info__image">
+			<img src={data.image_link} alt="nendo" height="128px" />
+		</div>
+		<div class="nendoroid-info__gender">성별 : {data.gender}</div>
+		<div>출시일: ~~~ 리스트</div>
+		<div>속한 시리즈 블럭, 시리즈 명과 속한 다른 넨도 표기</div>
+		<div>개인 사진 올리는 기능</div>
 	</div>
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}
+
+<style>
+	.nendoroid-info {
+		margin: 8px;
+	}
+	.nendoroid-info__name {
+		font-size: 64px;
+	}
+</style>
