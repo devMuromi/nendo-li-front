@@ -1,16 +1,11 @@
 <script>
-	export let data = '';
-	// let promise = getAPIData();
-
-	// function handleClick() {
-	// 	promise = getAPIData();
-	// }
+	export let nendoroid;
 </script>
 
 <div class="nendo-block">
-	<a href="/nendoroids/{data.number}">
-		<img src={data.image_link} height="96px" />
-		<div>{data.number} {data.name_ko}</div>
+	<a href="/nendoroids/{nendoroid.number}">
+		<img src={nendoroid.image_link} height="96px" />
+		<div>{nendoroid.number} {nendoroid.name_ko}</div>
 	</a>
 </div>
 

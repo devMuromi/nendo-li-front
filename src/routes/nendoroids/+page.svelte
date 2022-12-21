@@ -2,7 +2,7 @@
 	import Nendoroid from './Nendoroid.svelte';
 	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 
-	let datas = [];
+	let nendoroids = [];
 
 	const numberings = [
 		'000',
@@ -34,53 +34,40 @@
 		// getNendoroid();
 	}
 
-	// async function getNendoroid() {
-	// 	const url = `http://127.0.0.1:8000/nendoroid/nendoroid/?numbering=${currentNumbering}`;
-
-	// 	const res = await fetch(url);
-	// 	datas = await res.json();
-	// }
+	onMount(async () => {
+		const url = `http://127.0.0.1:8000/nendoroid/nendoroid/?numbering=${currentNumbering}`;
+		const res = await fetch(url);
+		nendoroids = await res.json();
+	});
 
 	afterUpdate(async () => {
 		const url = `http://127.0.0.1:8000/nendoroid/nendoroid/?numbering=${currentNumbering}`;
 
 		const res = await fetch(url);
-		datas = await res.json();
+		nendoroids = await res.json();
 	});
-
-	onMount(async () => {
-		const url = `http://127.0.0.1:8000/nendoroid/nendoroid/?numbering=${currentNumbering}`;
-
-		const res = await fetch(url);
-		datas = await res.json();
-
-		// if (res.ok) {
-		//     return data;
-		// } else {
-		//     throw new Error("error");
-		// }
-	});
-
-	// let nendoroids = getAPIData();
-
-	// let nendoroids = []
-	// for (let i = 3; i < 2000; i++){
-	//     nendoroids.push(i)
-	// }
 </script>
 
-<h1>Nendoroids {currentNumbering} - {currentNumbering.slice(0, -2) + '99'}</h1>
-<div class="numbering">
+<h1>넨도로이드 {currentNumbering} - {currentNumbering.slice(0, -2) + '99'}</h1>
+<div>
+	<div class="searchbar">
+		<input type="text" placeholder="Search..." />
+		<button>Search</button>
+	</div>
+</div>
+
+<span class="category">
+	<span class="category__title">번호</span>
 	{#each numberings as numbering}
-		<button on:click={changeNumbering} name={numbering} class="numbering__item"
+		<button on:click={changeNumbering} name={numbering} class="category__item"
 			>{numbering} - {numbering.slice(0, -2) + '99'}</button
 		>
 	{/each}
-</div>
+</span>
 
 <div class="nendoroids-container">
-	{#each datas as data}
-		<Nendoroid {data} />
+	{#each nendoroids as nendoroid}
+		<Nendoroid {nendoroid} />
 	{:else}
 		<p>loading...</p>
 	{/each}
@@ -93,9 +80,26 @@
 		/* grid-auto-columns: 116px; */
 		/* gap: 1px; */
 	}
-	.numbering {
+	.category {
 		display: flex;
+		border: 2px solid #aaaaaa;
+		padding: 8px 0px 8px 0px;
 	}
-	.numbering__item {
+	.category__title {
+		margin-right: 8px;
+		padding: 4px;
+	}
+	.category__item {
+		margin-right: 8px;
+		padding: 4px;
+		background-color: white;
+		border: 1px solid #aaaaaa;
+		border-radius: 8px;
+	}
+	.category__item:hover {
+		background-color: #dcdcdc;
+	}
+	.category__item:active {
+		background-color: #aaaaaa;
 	}
 </style>
