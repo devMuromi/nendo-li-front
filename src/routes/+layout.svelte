@@ -1,5 +1,7 @@
 <script>
 	let header = 'Nendoroid';
+
+	let isLogin = false;
 </script>
 
 <div class="root">
@@ -8,8 +10,13 @@
 		<a class="nav__item" href="/nendoroids">넨도로이드</a>
 		<a class="nav__item" href="/series">시리즈</a>
 		<a class="nav__item" href="/news">뉴스</a>
+		{#if isLogin}
+			<a class="nav__item" href="/mypage">마이페이지</a>
+			<a class="nav__item" href="/logout">로그아웃</a>
+		{:else}
+			<a class="nav__item" href="/login">로그인</a>
+		{/if}
 		<a class="nav__item" href="/my">마이페이지</a>
-		<a class="nav__item" href="/settings">설정</a>
 	</nav>
 	<div class="header">{header}</div>
 	<div class="main">
