@@ -2,7 +2,7 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 	const id = data.id.slug;
-	import Series from './Series.svelte';
+	import Series from '../../series/Series.svelte';
 
 	async function getNendoroidData() {
 		const url = `http://127.0.0.1:8000/nendoroid/nendoroids/${id}`;
@@ -37,7 +37,10 @@
 				<!-- <div>Sculptor: {data.nendoroid.sculptor}</div> -->
 			</div>
 		</div>
-		<Series series={data.series} />
+		<div>
+			<h2>시리즈 목록</h2>
+			<Series series={data.series} />
+		</div>
 		<div>개인 사진 올리는 기능</div>
 	</div>
 {:catch error}

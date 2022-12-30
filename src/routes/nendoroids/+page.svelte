@@ -1,9 +1,7 @@
 <script>
 	import Nendoroid from './Nendoroid.svelte';
-	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 
 	let nendoroids = [];
-
 	const numberings = [
 		'000',
 		'100',
@@ -31,21 +29,16 @@
 
 	function changeNumbering(e) {
 		currentNumbering = e.target.name;
-		// getNendoroid();
+		getNendoroid();
 	}
 
-	onMount(async () => {
+	async function getNendoroid() {
 		const url = `http://127.0.0.1:8000/nendoroid/nendoroids/?numbering=${currentNumbering}`;
 		const res = await fetch(url);
 		nendoroids = await res.json();
-	});
+	}
 
-	afterUpdate(async () => {
-		const url = `http://127.0.0.1:8000/nendoroid/nendoroids/?numbering=${currentNumbering}`;
-
-		const res = await fetch(url);
-		nendoroids = await res.json();
-	});
+	getNendoroid();
 </script>
 
 <h1>넨도로이드 {currentNumbering} - {currentNumbering.slice(0, -2) + '99'}</h1>
