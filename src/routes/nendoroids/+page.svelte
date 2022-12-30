@@ -35,13 +35,13 @@
 	}
 
 	onMount(async () => {
-		const url = `http://127.0.0.1:8000/nendoroid/nendoroid/?numbering=${currentNumbering}`;
+		const url = `http://127.0.0.1:8000/nendoroid/nendoroids/?numbering=${currentNumbering}`;
 		const res = await fetch(url);
 		nendoroids = await res.json();
 	});
 
 	afterUpdate(async () => {
-		const url = `http://127.0.0.1:8000/nendoroid/nendoroid/?numbering=${currentNumbering}`;
+		const url = `http://127.0.0.1:8000/nendoroid/nendoroids/?numbering=${currentNumbering}`;
 
 		const res = await fetch(url);
 		nendoroids = await res.json();
