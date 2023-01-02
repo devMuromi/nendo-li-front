@@ -26,26 +26,18 @@
 	</div>
 	{#if navbarOpen}
 		<nav class="nav">
-			<div class="nav__item"><a class="nav__text" href="/" on:click={closeNavbar}>Home</a></div>
-			<div class="nav__item">
-				<a class="nav__text" href="/nendoroids" on:click={closeNavbar}>넨도로이드</a>
-			</div>
-			<div class="nav__item">
-				<a class="nav__text" href="/series" on:click={closeNavbar}>시리즈</a>
-			</div>
-			<div class="nav__item"><a class="nav__text" href="/news" on:click={closeNavbar}>뉴스</a></div>
+			<a class="nav__item" href="/nendoroids" on:click={closeNavbar}>넨도로이드</a>
+			<a class="nav__item" href="/" on:click={closeNavbar}>Home</a>
+			<a class="nav__item" href="/series" on:click={closeNavbar}>시리즈</a>
+			<a class="nav__item" href="/news" on:click={closeNavbar}>뉴스</a>
 			{#if isLogin}
-				<div class="nav__item">
-					<a class="nav__text" href="/mypage" on:click={closeNavbar}>마이페이지</a>
-				</div>
-				<div class="nav__item">
-					<a class="nav__text" href="/logout" on:click={closeNavbar}>로그아웃</a>
-				</div>
+				<a class="nav__item" href="/mypage" on:click={closeNavbar}>마이페이지</a>
+				<a class="nav__item" href="/logout" on:click={closeNavbar}>로그아웃</a>
 			{:else}{/if}
 		</nav>
 	{/if}
 
-	<div class="main">
+	<div class="main" on:click={closeNavbar}>
 		<slot />
 	</div>
 </div>
@@ -110,19 +102,17 @@
 	.nav-button:hover {
 		background-color: var(--color2dark);
 	}
-	.nav__item:hover {
-		background-color: var(--color4);
-	}
 	.nav__item {
 		flex-basis: 32px;
 		line-height: 32px;
-	}
-	.nav__text {
 		color: black;
 		font-size: 14px;
 		text-decoration-line: none;
 		padding-left: 12px;
 		overflow: hidden;
+	}
+	.nav__item:hover {
+		background-color: var(--color4);
 	}
 	.main {
 		width: auto;
