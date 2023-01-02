@@ -4,7 +4,7 @@
 
 {#if isLogin === false}
 	<div class="container">
-		<div class="">로그인</div>
+		<h2>로그인</h2>
 		<form class="">
 			<div class="">
 				<label class="form-label" for="email">이메일</label>
