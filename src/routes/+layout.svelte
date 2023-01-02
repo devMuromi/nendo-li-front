@@ -13,8 +13,23 @@
 			class="nav-toggle-button"
 			on:click={() => {
 				navbarOpen = !navbarOpen;
-			}}>///</button
+			}}
 		>
+			<svg width="28px" height="28px" viewBox="0 0 32 32" enable-background="new 0 0 32 32"
+				><line fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="7" x2="25" y1="13" y2="13" /><line
+					fill="none"
+					stroke="white"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-miterlimit="10"
+					stroke-width="2"
+					x1="7"
+					x2="25"
+					y1="22"
+					y2="22"
+				/><line fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="7" x2="25" y1="4" y2="4" /></svg
+			>
+		</button>
 		<div class="header-title">Nendo-li</div>
 		{#if isLogin}
 			<a class="header-login" href="/logout">로그아웃</a>
@@ -26,8 +41,8 @@
 	</div>
 	{#if navbarOpen}
 		<nav class="nav">
-			<a class="nav__item" href="/nendoroids" on:click={closeNavbar}>넨도로이드</a>
 			<a class="nav__item" href="/" on:click={closeNavbar}>Home</a>
+			<a class="nav__item" href="/nendoroids" on:click={closeNavbar}>넨도로이드</a>
 			<a class="nav__item" href="/series" on:click={closeNavbar}>시리즈</a>
 			<a class="nav__item" href="/news" on:click={closeNavbar}>뉴스</a>
 			{#if isLogin}
@@ -49,12 +64,11 @@
 		--color2: #1363df;
 		--color2dark: #0d4db5;
 		--color4: #dff6ff;
+		--color5: #eff5f5;
 	}
 	:global(body) {
 		margin: 0px;
-		font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-			'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-			'Segoe UI Symbol', 'Noto Color Emoji';
+		font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	}
 
 	.header {

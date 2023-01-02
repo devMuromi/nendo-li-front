@@ -12,12 +12,7 @@
 			</div>
 			<div class="">
 				<label class="form-label" for="password">비밀번호</label>
-				<input
-					class="form-control"
-					type="password"
-					id="password"
-					placeholder="비밀번호를 입력해주세요"
-				/>
+				<input class="form-control" type="password" id="password" placeholder="비밀번호를 입력해주세요" />
 			</div>
 			<div class="">
 				<button class="btn btn-light" type="submit">로그인</button>

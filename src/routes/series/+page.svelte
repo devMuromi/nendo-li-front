@@ -15,7 +15,7 @@
 	getSeries();
 </script>
 
-<h1>시리즈</h1>
+<h2>시리즈</h2>
 <!-- <div>
 	<div class="searchbar">
 		<input type="text" placeholder="Search..." />
