@@ -6,9 +6,7 @@ export function load({ fetch, params }) {
 		const nendoroid = await res.json();
 		const seriesRes = await fetch(`http://127.0.0.1:8000/nendoroid/series/${nendoroid.series}`);
 		const series = await seriesRes.json();
-		const data = { nendoroid: nendoroid, series: series };
-		return data;
+		return { nendoroid: nendoroid, series: series };
 	}
-
 	return getData(params.id);
 }

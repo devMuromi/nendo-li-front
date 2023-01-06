@@ -1,7 +1,5 @@
 <script>
-	import { afterUpdate, onMount } from 'svelte';
 	export let data;
-	console.log(data);
 	import Series from '../../series/Series.svelte';
 </script>
 

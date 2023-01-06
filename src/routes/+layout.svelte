@@ -48,7 +48,7 @@
 			{#if isLogin}
 				<a class="nav__item" href="/mypage" on:click={closeNavbar}>마이페이지</a>
 				<a class="nav__item" href="/logout" on:click={closeNavbar}>로그아웃</a>
-			{:else}{/if}
+			{/if}
 		</nav>
 	{/if}
 
@@ -112,9 +112,6 @@
 
 		background-color: white;
 		border-right: 1px solid lightgray;
-	}
-	.nav-button:hover {
-		background-color: var(--color2dark);
 	}
 	.nav__item {
 		flex-basis: 32px;

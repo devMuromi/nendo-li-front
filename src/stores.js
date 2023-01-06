@@ -1,3 +1,4 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-export token = writable(null);
+export const token = writable('tokencomeshere');
+export const refreshToken = writable('refreshtokencomeshere');
