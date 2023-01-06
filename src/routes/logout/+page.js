@@ -3,9 +3,7 @@ import { redirect } from '@sveltejs/kit';
 
 /** @type {import('./$types').LayoutServerLoad} */
 export function load() {
-	if (token || refreshToken) {
-		token.set(null);
-		refreshToken.set(null);
-		throw redirect(307, '/');
-	}
+	token.set(null);
+	refreshToken.set(null);
+	throw redirect(307, '/');
 }
