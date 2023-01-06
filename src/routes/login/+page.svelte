@@ -6,7 +6,7 @@
 	let password;
 
 	async function postLogin() {
-		await fetch('http://127.0.0.1:8000/auth/token/', {
+		await fetch('http://127.0.0.1:8000/auth/token/obtain/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -24,7 +24,6 @@
 					token.set(data.access);
 					refreshToken.set(data.refresh);
 				} else {
-					console.log(data.detail);
 					alert(data.detail);
 				}
 			});

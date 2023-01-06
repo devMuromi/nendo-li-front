@@ -1,6 +1,8 @@
 <script>
-	let isLogin = false;
+	import { token } from '../stores.js';
 	let navbarOpen = false;
+
+	$: isLogin = $token ? true : false;
 
 	function closeNavbar() {
 		navbarOpen = false;
