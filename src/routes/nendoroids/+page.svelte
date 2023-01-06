@@ -11,7 +11,7 @@
 	}
 
 	async function getNendoroid() {
-		const url = `http://127.0.0.1:8000/nendoroid/nendoroids/?numbering=${currentNumbering}`;
+		const url = `http://127.0.0.1:8000/api/nendoroids/?numbering=${currentNumbering}`;
 		const res = await fetch(url);
 		nendoroids = await res.json();
 	}

@@ -23,7 +23,12 @@
 			<h2>시리즈 목록</h2>
 			<Series series={data.series} />
 		</div>
-		<div>개인 사진 올리는 기능</div>
+		<div>
+			<h2>넨도로이드 사진</h2>
+			{#each data.nendoroid.nendoroidphoto_set as image}
+				<img src={image.photoURL} alt="nendoroid" height="512px" />
+			{/each}
+		</div>
 	</div>
 {:catch error}
 	<p style="color: red">{error.message}</p>

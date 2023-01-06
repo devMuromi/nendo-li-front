@@ -5,7 +5,7 @@
 	let page = 1;
 
 	async function getSeries() {
-		const url = `http://127.0.0.1:8000/nendoroid/series/?page=${page}`;
+		const url = `http://127.0.0.1:8000/api/series/?page=${page}`;
 		console.log(url);
 		const res = await fetch(url);
 		const seriesResponse = await res.json();
